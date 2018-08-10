@@ -11,7 +11,7 @@ You can use the skeleton bundle as basis for your own Contao bundle.
 Download the skeleton bundle:
 
 ```bash
-wget https://github.com/contao/manager-plugin/archive/master.zip
+wget https://github.com/contao/skeleton-bundle/archive/master.zip
 unzip master.zip
 mv skeleton-bundle-master [package name]
 cd [package name]
