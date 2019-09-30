@@ -1,12 +1,17 @@
 {
     "name": "contao/skeleton-bundle",
-    "type": "contao-bundle",
+    "type": "symfony-bundle",
     "description": "Skeleton for custom Contao 4 bundles",
+    "homepage": "https://contao.org",
     "license": "LGPL-3.0-or-later",
     "authors": [
         {
             "name": "Leo Feyer",
             "homepage": "https://github.com/leofeyer"
+        },
+        {
+            "name": "Contao Community",
+            "homepage": "https://contao.org/contributors"
         }
     ],
     "require": {
