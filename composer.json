@@ -1,6 +1,6 @@
 {
     "name": "contao/skeleton-bundle",
-    "type": "symfony-bundle",
+    "type": "contao-bundle",
     "description": "Skeleton for custom Contao 4 bundles",
     "homepage": "https://contao.org",
     "license": "LGPL-3.0-or-later",
