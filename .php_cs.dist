@@ -15,40 +15,63 @@ $finder = PhpCsFixer\Finder::create()
 
 return PhpCsFixer\Config::create()
     ->setRules([
-        '@Symfony' => true,
-        '@Symfony:risky' => true,
-        '@PHPUnit60Migration:risky' => true,
-        'align_multiline_comment' => true,
-        'array_syntax' => ['syntax' => 'short'],
-        'combine_consecutive_issets' => true,
-        'combine_consecutive_unsets' => true,
-        'compact_nullable_typehint' => true,
-        'general_phpdoc_annotation_remove' => [
-            'expectedException',
-            'expectedExceptionMessage',
+        '@PhpCsFixer' => true,
+        '@PhpCsFixer:risky' => true,
+        '@PHP71Migration' => true,
+        '@PHP71Migration:risky' => true,
+        '@PHPUnit75Migration:risky' => true,
+
+        // @PhpCsFixer adjustments
+        'blank_line_before_statement' => [
+            'statements' => [
+                'case',
+                'declare',
+                'default',
+                'do',
+                'for',
+                'foreach',
+                'if',
+                'return',
+                'switch',
+                'throw',
+                'try',
+                'while',
+            ],
         ],
-        'header_comment' => ['header' => $header],
-        'heredoc_to_nowdoc' => true,
+        'explicit_indirect_variable' => false,
+        'explicit_string_variable' => false,
+        'method_chaining_indentation' => false,
+        'no_extra_blank_lines' => [
+            'tokens' => [
+                'curly_brace_block',
+                'extra',
+                'parenthesis_brace_block',
+                'square_brace_block',
+                'throw',
+                'use',
+            ],
+        ],
+        'php_unit_internal_class' => false,
+        'php_unit_test_class_requires_covers' => false,
+        'phpdoc_types_order' => false,
+         'single_line_comment_style' => [
+            'comment_types' => ['hash'],
+        ],
+        'single_line_throw' => true,
+
+        // @PhpCsFixer:risky adjustments
+        'final_internal_class' => false,
+        'php_unit_strict' => false,
+        'php_unit_test_case_static_method_calls' => [
+            'call_type' => 'this',
+        ],
+
+        // Other
         'linebreak_after_opening_tag' => true,
-        'native_function_invocation' => [
-            'include' => ['@compiler_optimized'],
-        ],
-        'no_null_property_initialization' => true,
-        'no_superfluous_elseif' => true,
-        'no_unreachable_default_argument_value' => true,
-        'no_useless_else' => true,
-        'no_useless_return' => true,
-        'ordered_class_elements' => true,
-        'ordered_imports' => true,
-        'php_unit_strict' => true,
-        'phpdoc_add_missing_param_annotation' => true,
-        'phpdoc_order' => true,
-        'phpdoc_types_order' => [
-            'null_adjustment' => 'always_last',
-            'sort_algorithm' => 'none',
-        ],
-        'strict_comparison' => true,
-        'strict_param' => true,
+        'list_syntax' => ['syntax' => 'short'],
+        'no_superfluous_phpdoc_tags' => true,
+        'static_lambda' => true,
+        'header_comment' => ['header' => $header],
     ])
     ->setFinder($finder)
     ->setRiskyAllowed(true)
