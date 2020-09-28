@@ -26,7 +26,7 @@
     },
     "require-dev": {
         "contao/manager-plugin": "^2.0",
-        "contao/easy-coding-standard": "^1.0",
+        "contao/easy-coding-standard": "^2.0",
         "phpunit/phpunit": "^8.4",
         "symfony/phpunit-bridge": "^4.4 || ^5.1"
     },
