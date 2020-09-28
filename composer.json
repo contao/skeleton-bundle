@@ -21,9 +21,12 @@
         "symfony/dependency-injection": "^4.4 || ^5.1",
         "symfony/http-kernel": "^4.4 || ^5.1"
     },
+    "conflict": {
+        "contao/manager-plugin": "<2.0 || >=3.0"
+    },
     "require-dev": {
         "contao/manager-plugin": "^2.0",
-        "friendsofphp/php-cs-fixer": "^2.16",
+        "contao/easy-coding-standard": "^1.0",
         "phpunit/phpunit": "^8.4",
         "symfony/phpunit-bridge": "^4.4 || ^5.1"
     },
@@ -43,5 +46,10 @@
     "support": {
         "issues": "https://github.com/contao/skeleton-bundle/issues",
         "source": "https://github.com/contao/skeleton-bundle"
+    },
+    "scripts": {
+        "cs-fixer": [
+            "vendor/bin/ecs check src/ tests/ --fix --ansi"
+        ]
     }
 }

@@ -20,9 +20,6 @@ use Contao\SkeletonBundle\ContaoSkeletonBundle;
 
 class Plugin implements BundlePluginInterface
 {
-    /**
-     * {@inheritdoc}
-     */
     public function getBundles(ParserInterface $parser)
     {
         return [

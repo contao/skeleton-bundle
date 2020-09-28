@@ -21,7 +21,7 @@ cd [package name]
 
 First adjust the following files:
 
- * `.php_cs.dist`
+ * `ecs.yaml`
  * `composer.json`
  * `phpunit.xml.dist`
  * `README.md`
@@ -45,7 +45,7 @@ to a DCA of other bundles).
 Run the PHP-CS-Fixer and the unit test before you release your bundle:
 
 ```bash
-vendor/bin/php-cs-fixer fix -v
+vendor/bin/ecs check src/ tests/ --fix --ansi
 vendor/bin/phpunit
 ```
 

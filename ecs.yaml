@@ -1,0 +1,6 @@
+imports:
+    - { resource: 'vendor/contao/easy-coding-standard/config/default.yaml' }
+
+services:
+    PhpCsFixer\Fixer\Comment\HeaderCommentFixer:
+        header: "This file is part of [package name].\n\n(c) John Doe\n\n@license LGPL-3.0-or-later"
