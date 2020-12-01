@@ -45,7 +45,7 @@ to a DCA of other bundles).
 Run the PHP-CS-Fixer and the unit test before you release your bundle:
 
 ```bash
-vendor/bin/ecs check src/ tests/ --fix --ansi
+vendor/bin/ecs check src/ tests/ --fix
 vendor/bin/phpunit
 ```
 
