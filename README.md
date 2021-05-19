@@ -13,7 +13,7 @@ Download the skeleton bundle:
 ```bash
 wget https://github.com/contao/skeleton-bundle/archive/main.zip
 unzip main.zip
-mv skeleton-bundle-master [package name]
+mv skeleton-bundle-main [package name]
 cd [package name]
 ```
 
