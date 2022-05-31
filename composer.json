@@ -15,20 +15,20 @@
         }
     ],
     "require": {
-        "php": "^7.2 || ^8.0",
-        "contao/core-bundle": "^4.9",
-        "symfony/config": "^4.4 || ^5.1",
-        "symfony/dependency-injection": "^4.4 || ^5.1",
-        "symfony/http-kernel": "^4.4 || ^5.1"
+        "php": "^7.4 || ^8.0",
+        "contao/core-bundle": "^4.13",
+        "symfony/config": "^5.4",
+        "symfony/dependency-injection": "^5.4",
+        "symfony/http-kernel": "^5.4"
     },
     "conflict": {
         "contao/manager-plugin": "<2.0 || >=3.0"
     },
     "require-dev": {
         "contao/manager-plugin": "^2.0",
-        "contao/easy-coding-standard": "^2.0",
-        "phpunit/phpunit": "^8.4",
-        "symfony/phpunit-bridge": "^4.4 || ^5.1"
+        "contao/easy-coding-standard": "^5.0",
+        "phpunit/phpunit": "^9.5",
+        "symfony/phpunit-bridge": "^5.4"
     },
     "extra": {
         "contao-manager-plugin": "Contao\\SkeletonBundle\\ContaoManager\\Plugin"
@@ -51,5 +51,12 @@
         "cs-fixer": [
             "vendor/bin/ecs check src/ tests/ --fix --ansi"
         ]
+    },
+    "config": {
+        "allow-plugins": {
+            "contao-components/installer": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "contao/manager-plugin": true
+        }
     }
 }
