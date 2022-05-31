@@ -20,7 +20,7 @@ use Contao\SkeletonBundle\ContaoSkeletonBundle;
 
 class Plugin implements BundlePluginInterface
 {
-    public function getBundles(ParserInterface $parser)
+    public function getBundles(ParserInterface $parser): array
     {
         return [
             BundleConfig::create(ContaoSkeletonBundle::class)

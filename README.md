@@ -21,8 +21,9 @@ cd [package name]
 
 First adjust the following files:
 
- * `ecs.yaml`
  * `composer.json`
+ * `ecs.php`
+ * `LICENSE`
  * `phpunit.xml.dist`
  * `README.md`
 
@@ -34,10 +35,10 @@ the following files:
  * `src/ContaoSkeletonBundle.php`
  * `tests/ContaoSkeletonBundleTest.php`
 
-Finally add your custom classes and resources. Make sure to register your services
-within `src/Resources/config/services.yml`. Also make sure to 
-[adjust the Contao Manager Plugin][2] (and the dependencies within the `composer.json`) 
-accordingly, if your bundle makes adjustments to other bundles (e.g. adjustments 
+Finally, add your custom classes and resources. Make sure to register your services
+within `src/Resources/config/services.yml`. Also make sure to
+[adjust the Contao Manager Plugin][2] (and the dependencies within the `composer.json`)
+accordingly, if your bundle makes adjustments to other bundles (e.g. adjustments
 to a DCA of other bundles).
 
 ## Release
