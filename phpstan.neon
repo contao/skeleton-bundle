@@ -1,0 +1,19 @@
+includes:
+    - vendor/phpstan/phpstan-phpunit/extension.neon
+    - vendor/phpstan/phpstan-phpunit/rules.neon
+    - vendor/phpstan/phpstan-symfony/extension.neon
+    - vendor/phpstan/phpstan-symfony/rules.neon
+
+parameters:
+    level: 6
+
+    paths:
+        - %currentWorkingDirectory%/src
+        - %currentWorkingDirectory%/tests
+
+    universalObjectCratesClasses:
+        - Contao\Model
+        - Contao\Template
+
+    excludePaths:
+        - %currentWorkingDirectory%/src/Resources/*
