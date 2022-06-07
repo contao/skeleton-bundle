@@ -5,3 +5,7 @@
 # PhpUnit
 /.phpunit.result.cache
 /phpunit.xml
+
+# Tools
+/tools/*/composer.lock
+/tools/*/vendor
