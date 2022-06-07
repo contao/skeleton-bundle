@@ -50,7 +50,7 @@
             "@ecs",
             "@phpstan"
         ],
-        "ecs": "@php tools/ecs/vendor/bin/ecs check src src tests tools/*/src --config ecs.php --fix --ansi",
+        "ecs": "@php tools/ecs/vendor/bin/ecs check src tests --config ecs.php --fix --ansi",
         "phpstan": "@php tools/phpstan/vendor/bin/phpstan analyze --ansi",
         "unit-tests": "@php vendor/bin/phpunit --colors=always"
     },
