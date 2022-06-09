@@ -7,5 +7,4 @@
 /phpunit.xml
 
 # Tools
-/tools/*/composer.lock
 /tools/*/vendor
