@@ -1,0 +1,103 @@
+name: CI
+
+on:
+    pull_request: ~
+    push: ~
+
+jobs:
+    ecs:
+        name: ECS
+        runs-on: ubuntu-latest
+        steps:
+            -   name: Setup PHP
+                uses: shivammathur/setup-php@v2
+                with:
+                    php-version: 7.4 # Run with the lowest supported to avoid incompatible fixes
+                    extensions: dom, fileinfo, filter, gd, hash, intl, json, mbstring, mysqli, pcre, pdo_mysql, zlib
+                    coverage: none
+                env:
+                    COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+            -   name: Checkout
+                uses: actions/checkout@v3
+
+            -   name: Install the dependencies
+                run: |
+                    composer install --no-interaction --no-progress
+                    composer bin ecs install --no-interaction --no-progress
+
+            -   name: Run ECS
+                run: tools/ecs/vendor/bin/ecs check src tests --config ecs.php --no-progress-bar --ansi
+
+    phpstan:
+        name: PHPStan
+        runs-on: ubuntu-latest
+        steps:
+            -   name: Setup PHP
+                uses: shivammathur/setup-php@v2
+                with:
+                    php-version: 8.1
+                    extensions: dom, fileinfo, filter, gd, hash, intl, json, mbstring, mysqli, pcre, pdo_mysql, zlib
+                    coverage: none
+                env:
+                    COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+            -   name: Checkout
+                uses: actions/checkout@v3
+
+            -   name: Install the dependencies
+                run: |
+                    composer install --no-interaction --no-progress
+                    composer bin phpstan install --no-interaction --no-progress
+
+            -   name: Run PHPStan
+                run: tools/phpstan/vendor/bin/phpstan analyse --no-progress
+
+    tests:
+        name: PHP ${{ matrix.php }}
+        runs-on: ubuntu-latest
+        strategy:
+            fail-fast: false
+            matrix:
+                php: [ 7.4, 8.0, 8.1 ]
+        steps:
+            -   name: Setup PHP
+                uses: shivammathur/setup-php@v2
+                with:
+                    php-version: ${{ matrix.php }}
+                    extensions: dom, fileinfo, filter, gd, hash, intl, json, mbstring, mysqli, pcre, pdo_mysql, zlib
+                    coverage: none
+                env:
+                    COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+            -   name: Checkout
+                uses: actions/checkout@v3
+
+            -   name: Install the dependencies
+                run: composer install --no-interaction --no-progress
+
+            -   name: Run the unit tests
+                run: vendor/bin/phpunit --colors=always
+
+    nightly:
+        name: PHP 8.2
+        runs-on: ubuntu-latest
+        continue-on-error: true
+        steps:
+            -   name: Setup PHP
+                uses: shivammathur/setup-php@v2
+                with:
+                    php-version: 8.2
+                    extensions: dom, fileinfo, filter, gd, hash, intl, json, mbstring, mysqli, pcre, pdo_mysql, zlib
+                    coverage: none
+                env:
+                    COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+            -   name: Checkout
+                uses: actions/checkout@v3
+
+            -   name: Install the dependencies
+                run: composer install --ignore-platform-req=php --no-interaction --no-progress
+
+            -   name: Run the unit tests
+                run: vendor/bin/phpunit --colors=always
