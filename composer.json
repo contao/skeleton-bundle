@@ -46,9 +46,9 @@
     },
     "config": {
         "allow-plugins": {
+            "bamarni/composer-bin-plugin": true,
             "contao-components/installer": true,
-            "contao/manager-plugin": true,
-            "bamarni/composer-bin-plugin": true
+            "contao/manager-plugin": true
         }
     },
     "extra": {
