@@ -14,7 +14,7 @@ return static function (ECSConfig $ecsConfig): void {
 
     if (PHP_VERSION_ID < 80000) {
         $ecsConfig->ruleWithConfiguration(\PhpCsFixer\Fixer\ControlStructure\TrailingCommaInMultilineFixer::class, ['elements' => ['arrays'], 'after_heredoc' => true]);
-        // SKip PhpUnitExpecationFixer (see https://github.com/symplify/symplify/issues/3130)
+        // Skip PhpUnitExpecationFixer (see https://github.com/symplify/symplify/issues/3130)
         $ecsConfig->skip([\PhpCsFixer\Fixer\PhpUnit\PhpUnitExpectationFixer::class]);
     }
 
