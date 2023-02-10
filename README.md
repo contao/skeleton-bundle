@@ -43,6 +43,8 @@ to a DCA of other bundles).
 
 ## Release
 
+To ernable the following run `composer update` and `composer bin all install` in your bundle's root.
+
 Run the PHP-CS-Fixer and the unit test before you release your bundle:
 
 ```bash
