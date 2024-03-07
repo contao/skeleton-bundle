@@ -43,8 +43,9 @@ to a DCA of other bundles).
 
 ## Release
 
-First make sure the tools are installed and up to date by running `composer bin all update` in your bundle's root.
-Then run the PHP-CS-Fixer and the unit test before you release your bundle:
+First make sure the tools are installed and up to date by running
+`composer bin all update` in your bundle's root. Then run the PHP-CS-Fixer and
+the unit test before you release your bundle:
 
 ```bash
 vendor/bin/ecs check src/ tests/ --fix
